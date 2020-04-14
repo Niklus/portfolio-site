@@ -8,6 +8,11 @@ import { EducationComponent } from './education/education.component';
 const routes: Routes = [
   { 
     path: '', 
+    redirectTo: 'home', 
+    pathMatch: 'full'
+  },
+  { 
+    path: 'home', 
     component: HomePageComponent 
   },
   { 
@@ -24,7 +29,8 @@ const routes: Routes = [
   },
   { 
     path: '**', 
-    component: HomePageComponent 
+    redirectTo: 'home', 
+    pathMatch: 'full'
   }
 ];
 

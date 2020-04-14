@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentService } from '../services/document.service';
 
 @Component({
   selector: 'app-education',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  constructor() { }
+  title = 'Education';
+
+  constructor(private docService: DocumentService) { }
 
   ngOnInit(): void {
+    this.docService.updateDocTitle(this.title);
   }
 
 }

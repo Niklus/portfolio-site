@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DocumentService } from '../services/document.service';
 
 @Component({
   selector: 'app-projects',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
 
-  constructor() { }
+  title = 'Projects';
+
+  constructor(private docService: DocumentService) { }
 
   ngOnInit(): void {
+    this.docService.updateDocTitle(this.title);
   }
 
 }
