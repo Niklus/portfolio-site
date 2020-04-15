@@ -8,12 +8,9 @@ import { DocumentService } from '../services/document.service';
 })
 export class EducationComponent implements OnInit {
 
-  title = 'Education';
-
   constructor(private docService: DocumentService) { }
 
   ngOnInit(): void {
-    this.docService.updateDocTitle(this.title);
+    this.docService.updateDocTitle('Education');
   }
-
 }

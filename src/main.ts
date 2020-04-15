@@ -7,10 +7,10 @@ import { environment } from './environments/environment';
 import * as firebase from 'firebase/app';
 import 'firebase/analytics';
 
-firebase.initializeApp(environment.firebaseConfig);
-firebase.analytics();
-
 if (environment.production) {
+  // Use firebase and analytics only in production
+  firebase.initializeApp(environment.firebaseConfig);
+  firebase.analytics();
   enableProdMode();
 }
 

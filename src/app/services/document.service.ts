@@ -8,7 +8,7 @@ export class DocumentService {
 
   constructor(@Inject(DOCUMENT) private doc: Document) { }
 
-  updateDocTitle(title) {
+  updateDocTitle(title): void {
     this.doc.title = `${title} - Nicholas Otieno Portfolio`;
   }
 }
