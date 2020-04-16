@@ -17,7 +17,7 @@
   margin: 5px 0 10px;
   border: 1px solid rgba(128, 128, 128, 0.205);
   border-radius: 2px;
-  padding: 5px 10px;
+  padding: 10px 10px;
 }
 
 #message {
@@ -54,6 +54,10 @@ label {
 }
 
 .disabled {
-  pointer-events:none;
+  pointer-events: none;
   opacity: 0.5;
+}
+
+.invalid {
+  border: 1px solid #ff4d4d !important; 
 }

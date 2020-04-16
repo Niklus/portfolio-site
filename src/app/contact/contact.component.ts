@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentService } from '../services/document.service';
 import { Router } from '@angular/router';
 import { EmailService } from '../services/email.service';
+import { TitleService } from '../services/title.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,52 +10,50 @@ import { EmailService } from '../services/email.service';
 })
 export class ContactComponent implements OnInit {
   
-  name: string;
-  email: string;
-  message: string;
+  name = '';
+  email = '';
+  message = '';
 
   constructor(
     private router: Router,
     private emailService: EmailService,
-    private docService: DocumentService
+    private titleService: TitleService
    ) { }
 
   ngOnInit(): void {
-    this.docService.updateDocTitle('Contact');
+    this.titleService.setTitle('Contact');
   }
 
   onSubmit(): void {
+    /*
+    *  Perform a second validation: HTML pattern 
+    *  validation can be bypassed easily 
+    */
     if (!this.validateEmail(this.email)) {
-      this.email = '';
+      this.email = 'INVALID';
     } else if(this.name && this.email && this.message) {
       this.sendMessage();
+    } else {
+      alert('Missing values(s). Message not sent');
     } 
   }
 
   sendMessage(): void {
-
-    const name = this.name.trim()
-      .split(/\s+/).join(' ');
-
-    const email = this.email.trim();
-    const message = this.message.trim();
-    const contact_number = Math.random() * 100000 | 0;
-
-    const params = {
-      name, 
-      email,
-      message,
-      contact_number
-    };
-
-    this.emailService.sendEmail(params);
-
-    alert('Success! Your Message has been sent');
-    
-    this.realodComponent();
+    this.emailService.sendEmail(this.params);
+    alert('Success! Your Message has been sent');   
+    this.reloadComponent();
   }
 
-  realodComponent(): void {
+  get params(): object {
+    return  {
+      name: this.name.trim().split(/\s+/).join(' '),
+      email: this.email.trim(),
+      message: this.message.trim().split(/\s+/).join(' '),
+      contact_number: Math.random() * 100000 | 0
+    }
+  }
+
+  reloadComponent(): void {
     // A hacky solution for realoading the component
     this.router.navigate(['/']).then(nav => {
       this.router.navigate(['/', 'contact']);

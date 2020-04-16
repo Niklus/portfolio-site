@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DocumentService } from '../services/document.service';
+import { TitleService } from '../services/title.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,9 +8,9 @@ import { DocumentService } from '../services/document.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private docService: DocumentService) { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
-    this.docService.updateDocTitle('Home');
+    this.titleService.setTitle('Home');
   }
 }

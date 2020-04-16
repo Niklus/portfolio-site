@@ -6,14 +6,18 @@ import emailjs from 'emailjs-com';
 })
 export class EmailService {
 
+  serviceId = 'gmail';
+  templateId = 'contact_form';
+  userId = 'user_EmXFwT7SHBlr403Wk9vcc';
+
   constructor() {
-    emailjs.init('user_EmXFwT7SHBlr403Wk9vcc');
+    emailjs.init(this.userId);
   }
 
-  sendEmail(params): void {
-    emailjs.send('gmail', 'contact_form', params)
-      .then(response => {
-        console.log('SUCCESS!', response.status, response.text);
+  sendEmail(params: object): void {
+    emailjs.send(this.serviceId, this.templateId, params)
+      .then(res => {
+        console.log('SUCCESS!', res.status, res.text);
       }, error => {
         console.log('FAILED...', error);
       });
