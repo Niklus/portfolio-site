@@ -7,12 +7,16 @@
   font-family: 'Open Sans', 'Trebuchet MS', Helvetica, sans-serif;
 }
 
+body {
+  background: #fafafa;
+}
+
 a {
   color: rgb(0, 110, 253);
   text-decoration: inherit;
-  :hover {
+  /*:hover {
     color: rgb(56, 56, 56);
-  }
+  }*/
 }
 
 li a {
@@ -33,7 +37,6 @@ h2 {
   font-style: italic;
 }
 
-
 /* Media */
 @media screen and (max-width: 599px) {
   .home-top-left-image {
@@ -47,10 +50,4 @@ h2 {
   .nav-text {
     display: none;
   }
-  /*.experience-block .logo-link, .experience-block-info {
-    grid-column: 1/3;
-  }
-  .experience-block-info  {
-    margin-bottom: 10px;
-  }*/
 }

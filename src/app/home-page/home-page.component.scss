@@ -6,14 +6,17 @@
   vertical-align: top;
   text-align: center;
 }
+
 .home-top-container h2 {
   text-align: right;
 }
+
 .home-top-left {
   display: inline-block;
   width: 250px;
   height: 250px;
 }
+
 .home-top-left-image img {
   border: 1px solid rgba(128, 128, 128, 0.205);
   width: 80%;
@@ -22,10 +25,12 @@
   background-size: cover;
   vertical-align: top;
 }
+
 .home-top-right {
   display: inline-block;
   vertical-align: top;
 }
+
 .home-top-right ul {
   width: 300px;
   /*border: 1px solid black;*/
@@ -35,9 +40,11 @@
   vertical-align: top;
   text-align: left;
 }
+
 .home-top-right li {
   list-style-type: none;
 }
+
 .home-top-right li .icon {
   font-size: 1.3em;
   text-align: right;
@@ -69,8 +76,8 @@
   width: 80px;
 }
 
-.CV {
-  width: 120px;
+.resume {
+  width: 80px;
 }
 
 .linkedin {

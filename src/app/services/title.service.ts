@@ -8,7 +8,7 @@ export class TitleService {
 
   constructor(private title: Title) { }
   
-  setTitle(title): void {
+  setTitle(title: string): void {
     this.title.setTitle(`${title} - Nicholas Otieno Portfolio`);
   }
 }

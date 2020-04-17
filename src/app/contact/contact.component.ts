@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import { EmailService } from '../services/email.service';
 import { TitleService } from '../services/title.service';
 
@@ -9,22 +9,26 @@ import { TitleService } from '../services/title.service';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  
-  name = '';
-  email = '';
-  message = '';
+
+  public name = '';
+  public email = '';
+  public message = '';
+
+  public snackBar = {
+    show: false,
+    text: ''
+  };
 
   constructor(
-    private router: Router,
     private emailService: EmailService,
     private titleService: TitleService
-   ) { }
+  ) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Contact');
   }
 
-  onSubmit(): void {
+  onSubmit(form:NgForm): void {
     /*
     *  Perform a second validation: HTML pattern 
     *  validation can be bypassed easily 
@@ -33,31 +37,36 @@ export class ContactComponent implements OnInit {
       this.email = 'INVALID';
     } else if(this.name && this.email && this.message) {
       this.sendMessage();
+      form.reset();
     } else {
-      alert('Missing values(s). Message not sent');
+      this.showSnackBar('Missing value(s). Message not sent');
     } 
   }
 
   sendMessage(): void {
     this.emailService.sendEmail(this.params);
-    alert('Success! Your Message has been sent');   
-    this.reloadComponent();
+    this.showSnackBar('Your message has been sent');   
   }
 
   get params(): object {
     return  {
-      name: this.name.trim().split(/\s+/).join(' '),
+      name: this.name.trim(),
       email: this.email.trim(),
-      message: this.message.trim().split(/\s+/).join(' '),
+      message: this.message.trim(),
       contact_number: Math.random() * 100000 | 0
     }
   }
 
-  reloadComponent(): void {
-    // A hacky solution for realoading the component
-    this.router.navigate(['/']).then(nav => {
-      this.router.navigate(['/', 'contact']);
-    });
+  showSnackBar(text:string) {
+    
+    this.snackBar = {
+      show: true,
+      text
+    };
+
+    setTimeout(() => { 
+      this.snackBar.show = false
+    }, 10000);
   }
 
   validateEmail(email:string): boolean {

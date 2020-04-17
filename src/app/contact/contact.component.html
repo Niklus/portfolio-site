@@ -17,7 +17,7 @@
     />
     <ng-container *ngIf="nameControl.invalid && nameControl.touched">
       <small *ngIf="nameControl.errors.required">
-        You must enter your name
+        Please enter your name
       </small>
       <small *ngIf="nameControl.errors.pattern">
         Please enter a valid name
@@ -37,7 +37,7 @@
     />
     <ng-container *ngIf="emailControl.invalid && emailControl.touched">
       <small *ngIf="emailControl.errors.required">
-        You must enter your email
+        Please enter your email
       </small>
       <small *ngIf="emailControl.errors.pattern">
         Please enter a valid email
@@ -49,7 +49,7 @@
       required 
       name="message" 
       [(ngModel)]="message"
-      placeholder="Enter your message..." 
+      placeholder="Enter your message" 
       #messageControl="ngModel"
       rows="5"
       [ngClass]="{'invalid': messageControl.invalid && messageControl.touched}">
@@ -61,11 +61,12 @@
     </ng-container>
     <div 
       class="button send" 
-      (click)="onSubmit()" 
+      (click)="onSubmit(contactForm)" 
       [ngClass]="{'disabled': contactForm.invalid}">
       <span class="icon is-small"><i class="fa fa-envelope"></i></span>
       Send Message
     </div>
   </form>
+  <app-snack-bar [snackBar]="snackBar"></app-snack-bar>
 </div>
         
