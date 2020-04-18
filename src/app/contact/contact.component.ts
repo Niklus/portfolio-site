@@ -34,7 +34,7 @@ export class ContactComponent implements OnInit {
     *  validation can be bypassed easily 
     */
     if (!this.validateEmail(this.email)) {
-      this.email = 'INVALID';
+      this.email = ' '; // show an invalid email error on the form
     } else if(this.name && this.email && this.message) {
       this.sendMessage();
       form.reset();
