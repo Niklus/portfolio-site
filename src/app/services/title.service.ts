@@ -7,7 +7,7 @@ import { Title } from '@angular/platform-browser';
 export class TitleService {
 
   constructor(private title: Title) { }
-  
+
   setTitle(title: string): void {
     this.title.setTitle(`${title} - Nicholas Otieno Portfolio`);
   }

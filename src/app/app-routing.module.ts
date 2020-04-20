@@ -6,30 +6,30 @@ import { ContactComponent } from './contact/contact.component';
 import { EducationComponent } from './education/education.component';
 
 const routes: Routes = [
-  { 
-    path: '', 
-    redirectTo: 'home', 
+  {
+    path: '',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
-  { 
-    path: 'home', 
-    component: HomePageComponent 
+  {
+    path: 'home',
+    component: HomePageComponent
   },
-  { 
-    path: 'projects', 
-    component: ProjectsComponent 
+  {
+    path: 'projects',
+    component: ProjectsComponent
   },
-  { 
-    path: 'education', 
-    component: EducationComponent 
+  {
+    path: 'education',
+    component: EducationComponent
   },
-  { 
-    path: 'contact', 
-    component: ContactComponent 
+  {
+    path: 'contact',
+    component: ContactComponent
   },
-  { 
-    path: '**', 
-    redirectTo: 'home', 
+  {
+    path: '**',
+    redirectTo: 'home',
     pathMatch: 'full'
   }
 ];
