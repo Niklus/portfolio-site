@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmailService } from '../services/email.service';
 import { TitleService } from '../services/title.service';
+import emailjs from 'emailjs-com';
 
 @Component({
   selector: 'app-contact',
@@ -15,14 +15,11 @@ export class ContactComponent implements OnInit {
   public message = '';
 
   public snackBar = {
-    show: false,
-    text: ''
+    text: '',
+    show: false
   };
 
-  constructor(
-    private emailService: EmailService,
-    private titleService: TitleService
-  ) { }
+  constructor(private titleService: TitleService) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Contact');
@@ -36,16 +33,10 @@ export class ContactComponent implements OnInit {
     if (!this.validateEmail(this.email)) {
       this.email = ' '; // show an invalid email error on the form
     } else if (this.name && this.email && this.message) {
-      this.sendMessage();
-      form.reset();
+      this.sendEmail(this.params, form);
     } else {
       this.showSnackBar('Missing value(s). Message not sent');
     }
-  }
-
-  sendMessage(): void {
-    this.emailService.sendEmail(this.params);
-    this.showSnackBar('Your message has been sent');
   }
 
   get params(): object {
@@ -67,6 +58,25 @@ export class ContactComponent implements OnInit {
     setTimeout(() => {
       this.snackBar.show = false;
     }, 10000);
+  }
+
+  sendEmail(params: object, form: NgForm): void {
+
+    const serviceId = 'gmail';
+    const templateId = 'contact_form';
+    const userId = 'user_EmXFwT7SHBlr403Wk9vcc';
+
+    emailjs.init(userId);
+
+    emailjs.send(serviceId, templateId, params)
+      .then(res => {
+        form.reset();
+        this.showSnackBar('Your message has been sent');
+        console.log('SUCCESS!', res.status, res.text);
+      }, error => {
+        this.showSnackBar('Error, message not sent');
+        console.log('FAILED...', error);
+      });
   }
 
   validateEmail(email: string): boolean {
