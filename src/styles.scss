@@ -45,6 +45,11 @@ h2 {
   .home-top-right h2 {
     text-align: center !important;
   }
+
+  .home-top-right {
+    position: relative;
+    left: 35px;
+  }
 }
 @media screen and (max-width: 540px) {
   .nav-text {
