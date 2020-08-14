@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { TitleService } from '../services/title.service';
-import emailjs from 'emailjs-com';
+import { EmailService } from '../services/email.service';
 
 @Component({
   selector: 'app-contact',
@@ -19,7 +19,10 @@ export class ContactComponent implements OnInit {
     show: false
   };
 
-  constructor(private titleService: TitleService) { }
+  constructor(
+    private titleService: TitleService,
+    private emailService: EmailService
+  ) { }
 
   ngOnInit(): void {
     this.titleService.setTitle('Contact');
@@ -62,13 +65,7 @@ export class ContactComponent implements OnInit {
 
   sendEmail(params: object, form: NgForm): void {
 
-    const serviceId = 'gmail';
-    const templateId = 'contact_form';
-    const userId = 'user_EmXFwT7SHBlr403Wk9vcc';
-
-    emailjs.init(userId);
-
-    emailjs.send(serviceId, templateId, params)
+    this.emailService.sendEmail(params)
       .then(res => {
         form.reset();
         this.showSnackBar('Your message has been sent');
