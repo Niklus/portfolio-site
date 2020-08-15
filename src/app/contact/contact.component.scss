@@ -37,10 +37,16 @@
   color: white;
   display: inline-block;
   margin: 20px 10px 0px 0px;
+  box-shadow: 0 0.3rem rgba(54, 54, 54, 0.4);
 }
 
 .button:hover {
   background: #135689;
+}
+
+.button:active {
+  transform: translate(0, 0.3rem);
+  box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
 }
 
 .send {

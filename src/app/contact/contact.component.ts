@@ -65,12 +65,19 @@ export class ContactComponent implements OnInit {
 
   sendEmail(params: object, form: NgForm): void {
 
+    form.reset();
+
     this.emailService.sendEmail(params)
       .then(res => {
-        form.reset();
         this.showSnackBar('Your message has been sent');
         console.log('SUCCESS!', res.status, res.text);
       }, error => {
+        // Repopulate the form: good user experience
+        form.setValue({
+          name: params['name'],
+          email: params['email'],
+          message: params['message']
+        });
         this.showSnackBar('Error, message not sent');
         console.log('FAILED...', error);
       });
