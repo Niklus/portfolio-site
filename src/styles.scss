@@ -39,8 +39,10 @@ h2 {
 
 /* Media */
 @media screen and (max-width: 599px) {
+
   .home-top-left-image {
     text-align: center !important;
+    padding-right: 55px;
   }
   .home-top-right h2 {
     text-align: center !important;
@@ -48,12 +50,12 @@ h2 {
 
   .home-top-right {
     position: relative;
-    left: 35px;
+    bottom: 40px;
   }
 
   .home-bottom-text {
     position: relative;
-    bottom: 40px;
+    bottom: 100px;
   }
 }
 @media screen and (max-width: 540px) {
