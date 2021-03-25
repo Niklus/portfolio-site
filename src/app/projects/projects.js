@@ -7,7 +7,7 @@ export default [
     populates the screen with the articles. This articles are clickable and
     each have a details page. The app is installable and works offline thus
     the user can still read the downloaded articles when there is no
-    internet connection`,
+    internet connection.`,
     appLink: "https://pwa-news-app.netlify.com",
     githubLink: "https://github.com/Niklus/pwa-news-app",
     tags: [
@@ -30,6 +30,100 @@ export default [
       {
         classes: ["tag", "tag-idb"],
         tech: "IndexedDb",
+      },
+      {
+        classes: ["tag", "tag-netlify"],
+        tech: "Netlify",
+      },
+    ],
+  },
+  {
+    image: "assets/img/techwork.jpg",
+    title: "Job Finder",
+    explanation: `This a job finder that specializes on tech. Developers can search for jobs
+    by entering the job description and location. Clicking the read more button takes you to the details of
+    the particular job description. The app is built with react.`,
+    appLink: "https://techwork.dev",
+    githubLink: "https://github.com/Niklus/job-finder",
+    tags: [
+      {
+        classes: ["tag", "tag-html"],
+        tech: "HTML5",
+      },
+      {
+        classes: ["tag", "tag-css"],
+        tech: "CSS",
+      },
+      {
+        classes: ["tag", "tag-js"],
+        tech: "JS",
+      },
+      {
+        classes: ["tag", "tag-reactjs"],
+        tech: "REACT",
+      },
+      {
+        classes: ["tag", "tag-netlify"],
+        tech: "Netlify",
+      },
+    ],
+  },
+  {
+    image: "assets/img/frontendhub.jpg",
+    title: "Frontend Blog",
+    explanation: `This is a frontend development blog built with react. The idea behind this is
+    for developers to be able to find summmaries of new tech, and all matters pertaining to frontend
+    development. The app is still new and I'm planning to add more features such as commenting, pagination
+    and sharing. The app is a PWA and therefore installable.`,
+    appLink: "https://frontendhub.dev",
+    githubLink: "https://github.com/Niklus/frontend-hub",
+    tags: [
+      {
+        classes: ["tag", "tag-html"],
+        tech: "HTML5",
+      },
+      {
+        classes: ["tag", "tag-css"],
+        tech: "CSS",
+      },
+      {
+        classes: ["tag", "tag-js"],
+        tech: "JS",
+      },
+      {
+        classes: ["tag", "tag-reactjs"],
+        tech: "REACT",
+      },
+      {
+        classes: ["tag", "tag-firebase"],
+        tech: "Firebase",
+      },
+      {
+        classes: ["tag", "tag-netlify"],
+        tech: "Netlify",
+      },
+    ],
+  },
+  {
+    image: "assets/img/space_browser.jpg",
+    title: "Space Browser",
+    explanation: `This is a space browser that allows you to discover the cosmos through images
+    provided by NASA. The user can browse through images and save the ones they like.
+    The images also come with a description explaining more about the image. The app is a PWA which means it is installable.`,
+    appLink: "https://space-browser.netlify.app/",
+    githubLink: "https://github.com/Niklus/space-browser",
+    tags: [
+      {
+        classes: ["tag", "tag-html"],
+        tech: "HTML5",
+      },
+      {
+        classes: ["tag", "tag-css"],
+        tech: "CSS",
+      },
+      {
+        classes: ["tag", "tag-js"],
+        tech: "JS",
       },
       {
         classes: ["tag", "tag-netlify"],
