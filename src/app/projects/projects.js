@@ -72,7 +72,7 @@ export default [
     image: "assets/img/frontendhub.jpg",
     title: "Frontend Blog",
     explanation: `This is a frontend development blog built with react. The idea behind this is
-    for developers to be able to find summmaries of new tech, and all matters pertaining to frontend
+    for developers to be able to find summaries of new tech, and all matters pertaining to frontend
     development. The app is still new and I'm planning to add more features such as commenting, pagination
     and sharing. The app is a PWA and therefore installable.`,
     appLink: "https://frontendhub.dev",
@@ -124,6 +124,10 @@ export default [
       {
         classes: ["tag", "tag-js"],
         tech: "JS",
+      },
+      {
+        classes: ["tag", "tag-idb"],
+        tech: "IndexedDb",
       },
       {
         classes: ["tag", "tag-netlify"],
