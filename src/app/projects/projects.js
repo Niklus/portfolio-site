@@ -136,6 +136,35 @@ export default [
     ],
   },
   {
+    image: "assets/img/youtube.jpg",
+    title: "Youtube Web Component",
+    explanation: `This is a youtube web component built on top of the YouTube Iframe API.
+    It allows developers to embed youtube in their applications using a html
+    like tag. The library is hosted on npm known as you-tube. The above
+    image is a demo showing the capabilities of the library. Clicking the
+    'view code' below demonstarates how to use the web component library.`,
+    appLink: "https://www-cd33c.firebaseapp.com/you-tube/",
+    githubLink: "https://github.com/Niklus/you-tube",
+    tags: [
+      {
+        classes: ["tag", "tag-html"],
+        tech: "HTML5",
+      },
+      {
+        classes: ["tag", "tag-css"],
+        tech: "CSS",
+      },
+      {
+        classes: ["tag", "tag-js"],
+        tech: "JS",
+      },
+      {
+        classes: ["tag", "tag-stencil"],
+        tech: "Stencil",
+      },
+    ],
+  },
+  {
     image: "assets/img/erc.jpg",
     title: "Exchange Rate Calculator",
     explanation: `This is a Progressive Web App that allows the user to see the exchange
@@ -220,35 +249,6 @@ export default [
       {
         classes: ["tag", "tag-js"],
         tech: "JS",
-      },
-    ],
-  },
-  {
-    image: "assets/img/youtube.jpg",
-    title: "Youtube Web Component",
-    explanation: `This is a youtube web component built on top of the YouTube Iframe API.
-    It allows developers to embed youtube in their applications using a html
-    like tag. The library is hosted on npm known as you-tube. The above
-    image is a demo showing the capabilities of the library. Clicking the
-    'view code' below demonstarates how to use the web component library.`,
-    appLink: "https://www-cd33c.firebaseapp.com/you-tube/",
-    githubLink: "https://github.com/Niklus/you-tube",
-    tags: [
-      {
-        classes: ["tag", "tag-html"],
-        tech: "HTML5",
-      },
-      {
-        classes: ["tag", "tag-css"],
-        tech: "CSS",
-      },
-      {
-        classes: ["tag", "tag-js"],
-        tech: "JS",
-      },
-      {
-        classes: ["tag", "tag-stencil"],
-        tech: "Stencil",
       },
     ],
   },
