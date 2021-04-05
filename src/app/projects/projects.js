@@ -143,7 +143,7 @@ export default [
     like tag. The library is hosted on npm known as you-tube. The above
     image is a demo showing the capabilities of the library. Clicking the
     'view code' below demonstarates how to use the web component library.`,
-    appLink: "https://www-cd33c.firebaseapp.com/you-tube/",
+    appLink: "https://niklus.github.io/you-tube-demo/",
     githubLink: "https://github.com/Niklus/you-tube",
     tags: [
       {
